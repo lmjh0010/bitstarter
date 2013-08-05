@@ -6,7 +6,7 @@ var app = express.createServer(express.logger());
 
 var buffer = new Buffer(fs.readFileSync('index.html'),'utf-8');
 
-app.use(express.static('/home/ubuntu/bitstarter'));
+app.use(express.static(__dirname));
 
 app.get('/', function(request, response) {
   response.send(buffer.toString());
